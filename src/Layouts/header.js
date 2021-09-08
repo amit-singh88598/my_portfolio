@@ -45,6 +45,16 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     marginLeft: 15,
     marginRight: 15,
+    display: "flex",
+  },
+  mobNavigation: {
+    color: "#000",
+    textDecoration: "none",
+    display: "flex",
+  },
+  mobIcon: {
+    marginLeft: 12,
+    marginRight: 10,
   },
   search: {
     position: "relative",
@@ -105,10 +115,6 @@ export default function Header() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -133,8 +139,8 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
     </Menu>
   );
 
@@ -150,22 +156,36 @@ export default function Header() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <Link to="/home" className={classes.mobNavigation}>
+          <Home className={classes.mobIcon} />
+          home
+        </Link>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+        <Link to="/about" className={classes.mobNavigation}>
+          <Info className={classes.mobIcon} />
+          About
+        </Link>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
+        <Link to="/education" className={classes.mobNavigation}>
+          <School className={classes.mobIcon} />
+          Education
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/experience" className={classes.mobNavigation}>
+          <LocalActivity className={classes.mobIcon} />
+          Experience
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/myWork" className={classes.mobNavigation}>
+          <Assignment className={classes.mobIcon} />
+          My Work
+        </Link>
+      </MenuItem>
+      {/* <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -175,7 +195,7 @@ export default function Header() {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
-      </MenuItem>
+      </MenuItem> */}
     </Menu>
   );
 
@@ -183,57 +203,37 @@ export default function Header() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
 
           <Typography className={classes.title} variant="h6" noWrap>
             Amit Singh
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Link
-              to="/home"
-              className={classes.navText}
-              style={{ display: "flex" }}
-            >
+            <Link to="/home" className={classes.navText}>
               <Home style={{ marginRight: 10 }} />
               Home
             </Link>
-            <Link
-              to="/about"
-              className={classes.navText}
-              style={{ display: "flex" }}
-            >
+            <Link to="/about" className={classes.navText}>
               <Info style={{ marginRight: 10 }} />
               About
             </Link>
-            <Link
-              to="/education"
-              className={classes.navText}
-              style={{ display: "flex" }}
-            >
+            <Link to="/education" className={classes.navText}>
               <School style={{ marginRight: 10 }} />
               Education
             </Link>
-            <Link
-              to="/experience"
-              className={classes.navText}
-              style={{ display: "flex" }}
-            >
+            <Link to="/experience" className={classes.navText}>
               <LocalActivity style={{ marginRight: 10 }} />
               Experience
             </Link>
-            <Link
-              to="/myWork"
-              className={classes.navText}
-              style={{ display: "flex" }}
-            >
+            <Link to="/myWork" className={classes.navText}>
               <Assignment style={{ marginRight: 10 }} />
               My Work
             </Link>
