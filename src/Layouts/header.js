@@ -212,9 +212,9 @@ export default function Header() {
             <MenuIcon />
           </IconButton> */}
 
-          <Typography className={classes.title} variant="h6" noWrap>
+          {/* <Typography className={classes.title} variant="h6" noWrap>
             Amit Singh
-          </Typography>
+          </Typography> */}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Link to="/home" className={classes.navText}>

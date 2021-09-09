@@ -7,8 +7,10 @@ function Home(props) {
   return (
     <div>
       <Header />
-      <Profile />
-      <Skills />
+      <div style={{ backgroundColor: "#022C43" }}>
+        <Profile />
+        <Skills />
+      </div>
     </div>
   );
 }

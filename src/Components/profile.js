@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Button,
   Container,
   Grid,
   makeStyles,
@@ -11,7 +12,7 @@ import SocialMedia from "./socialMedia";
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: 40,
-    backgroundColor: "#022C43",
+    // backgroundColor: "#022C43",
   },
   image: {
     display: "flex",
@@ -75,6 +76,17 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "0.8em",
     },
   },
+  btn: {
+    marginTop: 40,
+    fontWeight: "bold",
+  },
+  btnLink: {
+    textDecoration: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      justifyContent: "center",
+    },
+  },
   flex: {
     display: "flex",
   },
@@ -112,6 +124,15 @@ function Profile(props) {
               <Typography className={classes.skills}>Freelancer</Typography>
             </div>
             <SocialMedia />
+            <a
+              href="https://drive.google.com/file/d/1udWfl3aK9op2R-EwFf1n56cQrnmcC-1b/view?usp=sharing"
+              download
+              className={classes.btnLink}
+            >
+              <Button variant="contained" className={classes.btn}>
+                View Or Download Resume
+              </Button>
+            </a>
           </Grid>
         </Grid>
       </Container>
