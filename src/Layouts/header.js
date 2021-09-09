@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+    backgroundColor: "#FFD700",
   },
   menuButton: {
     [theme.breakpoints.up("md")]: {
@@ -201,7 +202,11 @@ export default function Header() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar
+        position="fixed"
+        style={{ backgroundColor: "#CF6766" }}
+        elevation={0}
+      >
         <Toolbar>
           {/* <IconButton
             edge="start"

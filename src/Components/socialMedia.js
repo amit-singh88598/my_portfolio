@@ -22,10 +22,9 @@ function SocialMedia(props) {
               <GitHub />
             </IconButton>
           </a>
-          {/* </Link> */}
         </Grid>
         <Grid item xs={2} sm={2}>
-          <a href="linkedin.com/in/amit-singh-71755b159">
+          <a href="https://www.linkedin.com/in/amit-singh-71755b159/">
             <IconButton className={classes.btn}>
               <LinkedIn />
             </IconButton>

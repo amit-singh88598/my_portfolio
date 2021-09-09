@@ -11,7 +11,7 @@ import SocialMedia from "./socialMedia";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: 40,
+    paddingTop: 120,
     // backgroundColor: "#022C43",
   },
   image: {
@@ -70,8 +70,9 @@ const useStyles = makeStyles((theme) => ({
   skills: {
     marginRight: 15,
     marginTop: 20,
-    color: "#8D8D8D",
+    color: "#fff",
     fontSize: "1em",
+    opacity: 0.7,
     [theme.breakpoints.down("sm")]: {
       fontSize: "0.8em",
     },
@@ -79,6 +80,11 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: 40,
     fontWeight: "bold",
+    backgroundColor: "#787878",
+    borderRadius: 50,
+    paddingBlock: 10,
+    opacity: "0.7",
+    color: "#fff",
   },
   btnLink: {
     textDecoration: "none",
